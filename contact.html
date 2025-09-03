@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<title>contCT</title>
+<Center>
+
+<b><head>CONTACT</head></b>
+    
+        <div class="background-wrapper">
+            <div class="live-background"></div>
+            </div>
+            <style>
+                 }
+        .background-wrapper{
+        position: relative;
+    }
+    .live-background{
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(to right, black, orange, pink, white, magenta, gold,  #966e6e, yellow,blue,green,purple );
+        background-size: 1000% 1000%;
+        animation: live-background 20s ease infinite;
+        z-index: -1;
+    }
+    @keyframes live-background{
+        0%{
+            background-position: 0% 0%;
+        }
+        50%{
+            background-position: 100% 100%;
+        }
+        100%{
+            background-position: 0% 0%;
+
+        }
+    }
+            </style>
+        
+        
+        
+    
+    
+</Center>
+
+<Body>
+    <Label for="EMAIL">EMAIL:</Label>
+    <input type="email" id="email" placeholder="email">
+    <Label for="EMAIL">PHONE NUMBER:</Label>
+    <input type="number" id="number" placeholder="phone number">
+    <Label for="PASSWORD"> PASSWORD:    </Label>
+    <input type="password" id="password" placeholder="phone number"><br>
+    <a href="submit.html">CLICK TO SUBMIT</a>
+
+
+    
+</Body>

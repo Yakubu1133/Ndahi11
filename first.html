@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MR Nuhu Family Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('loginimage.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 300px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .link {
+      margin-top: 10px;
+      color: blue;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-size: 14px;
+      color: red;
+    }
+
+    .welcome {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="formContainer">
+    <h2 id="formTitle">Login to MR Nuhu Family</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Enter your name" required />
+      <input type="password" id="password" placeholder="Enter family password" required />
+      <button type="submit">Login</button>
+      <p class="link" onclick="showSignup()">Don't have an account? Sign up</p>
+      <p id="message"></p>
+    </form>
+
+    <form id="signupForm" style="display: none;">
+      <input type="text" id="newUsername" placeholder="Your name" required />
+      <input type="date" id="dob" required />
+      <input type="text" id="address" placeholder="Your home address" required />
+      <select id="reason" required>
+        <option value="">Why are you joining?</option>
+        <option value="family">Join the Family</option>
+        <option value="fun">For Fun</option>
+        <option value="know">To Know More About Mr. Nuhu</option>
+      </select>
+      <button type="button" onclick="completeSignup()">Create Account</button>
+      <p class="link" onclick="showLogin()">Back to Login</p>
+    </form>
+  </div>
+
+  <script>
+    const fixedPassword = "HYEL-FAMILY-2025";
+
+    function showSignup() {
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("signupForm").style.display = "block";
+      document.getElementById("formTitle").textContent = "Join the Loving Family";
+      document.getElementById("message").textContent = "";
+    }
+
+    function showLogin() {
+      document.getElementById("loginForm").style.display = "block";
+      document.getElementById("signupForm").style.display = "none";
+      document.getElementById("formTitle").textContent = "Login to MR Nuhu Family";
+      document.getElementById("message").textContent = "";
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (password === fixedPassword) {
+        window.location.href = "nana.html";
+      } else {
+        document.getElementById("message").textContent = "Wrong password! Please try again.";
+      }
+    });
+
+    function completeSignup() {
+      const name = document.getElementById("newUsername").value.trim();
+      if (name) {
+        const capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+        document.getElementById("formContainer").innerHTML = `
+          <div class='welcome'>
+            <h2>Welcome, ${capitalized}! ❤️</h2>
+            <p>We are so happy to have you in our wonderful family! 🏡</p>
+            <p>Your family password is: <strong>HYEL-FAMILY-2025</strong></p>
+            <p>Your account has been created with love! 💖</p>
+            <button onclick="location.href='first.html'">BACK TO LOGIN 🏠</button>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

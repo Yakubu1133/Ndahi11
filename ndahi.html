@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<HEad>ABOUT ME</HEad>
+<a href="kaka.html">BACK TO MENU</a>
+<Hr>
+
+    <STyle>
+
+.background-wrapper{
+    position: relative;
+}
+.live-background{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #440c0c, rgb(47, 192, 17), yellow, white, orange, blue, pink, magenta, rgb(80, 63, 9),rgb(153, 38, 18),rgb(33, 53, 33),purple );
+    background-size: 1000% 1000%;
+    animation: live-background 15s ease infinite;
+    z-index: -1;
+}
+@keyframes live-background{
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0% 0%;
+
+    }
+}
+</STyle>
+<body>
+    <div class="background-wrapper">
+        <div class="live-background"></div>
+        <center>
+    <img src="uu.jpg" width="30%" height="20%"> 
+</body>
